@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <title>TCL Trafic</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">T</div>
+        <div>
+          <p class="eyebrow">LYON</p>
+          <h1>Trafic TCL</h1>
+        </div>
+      </div>
+      <button id="refreshButton" class="refresh" type="button" aria-label="Actualiser">
+        <span aria-hidden="true">↻</span> Actualiser
+      </button>
+    </header>
+
+    <section class="summary" aria-label="Résumé du trafic">
+      <div>
+        <p class="label">État du réseau</p>
+        <p id="networkStatus" class="status-value"><span class="dot"></span> Chargement...</p>
+      </div>
+      <p id="lastUpdate" class="update">Dernière mise à jour —</p>
+    </section>
+
+    <section class="filters" aria-label="Filtrer les perturbations">
+      <label for="query">Rechercher une ligne</label>
+      <div class="search-row">
+        <input id="query" type="search" placeholder="Ex. Métro B, T1, C3" autocomplete="off" />
+        <button id="clearButton" type="button" aria-label="Effacer la recherche">×</button>
+      </div>
+    </section>
+
+    <section id="alertsContainer" class="alerts" aria-live="polite">
+      <article class="alert loading-card">
+        <div class="skeleton"></div>
+        <div class="skeleton short"></div>
+      </article>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
